@@ -1,0 +1,27 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	x:Class="AnimePaint.BrushIcon"
+	x:Name="UserControl"
+	d:DesignWidth="150" d:DesignHeight="150">
+
+    <Viewbox>
+        <Canvas Height="150" Width="150">
+            <Line
+		X1="120" Y1="22"
+		X2="70" Y2="80"
+		Stroke="{DynamicResource ActiveForegroundBrushKey}"
+		StrokeThickness="12" StrokeStartLineCap="Round" StrokeEndLineCap="Round" StrokeLineJoin="Round"
+		/>
+            <Path
+		Data="M 60,90 C 50,75 40,110 30,120 C 50,120 65,100 60,90"
+		Stroke="{DynamicResource ActiveForegroundBrushKey}"
+		Fill="{DynamicResource ActiveForegroundBrushKey}"
+		StrokeThickness="12" StrokeStartLineCap="Round" StrokeEndLineCap="Round"
+		/>
+        </Canvas>
+    </Viewbox>
+</UserControl>

@@ -59,8 +59,46 @@ namespace AnimePaint.ViewModels
          * 自動的にUIDispatcher上での通知に変換されます。変更通知に際してUIDispatcherを操作する必要はありません。
          */
 
+
+        #region Height変更通知プロパティ
+        private int _Height;
+
+        public int Height
+        {
+            get
+            { return _Height; }
+            set
+            {
+                if (_Height == value)
+                    return;
+                _Height = value;
+                RaisePropertyChanged();
+            }
+        }
+        #endregion
+
+        #region Width変更通知プロパティ
+        private int _Width;
+
+        public int Width
+        {
+            get
+            { return _Width; }
+            set
+            {
+                if (_Width == value)
+                    return;
+                _Width = value;
+                RaisePropertyChanged();
+            }
+        }
+        #endregion
+
+
         public void Initialize()
         {
+            Width = 1920;
+            Height = 1080;
         }
     }
 }

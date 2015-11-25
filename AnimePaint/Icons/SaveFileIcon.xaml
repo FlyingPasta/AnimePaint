@@ -1,0 +1,29 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
+	mc:Ignorable="d"
+	x:Class="AnimePaint.SaveFileIcon"
+	x:Name="UserControl"
+	d:DesignWidth="150" d:DesignHeight="150">
+
+
+    <Viewbox>
+        <Grid x:Name="LayoutRoot">
+            <Rectangle Fill="#004D4D63" HorizontalAlignment="Left" Height="90" Margin="25,35,0,0" Stroke="#FFF0AA28" VerticalAlignment="Top" Width="120" StrokeThickness="3"/>
+            <Rectangle Fill="#FFF0AA28" HorizontalAlignment="Left" Height="55" Margin="15,70,0,0" Stroke="#FFF0AA28" StrokeThickness="3" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="20"/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <ed:BlockArrow Fill="#FF286FF0" HorizontalAlignment="Left" Height="55" Margin="55,10,0,0" Orientation="Down" Stroke="#FF286FF0" StrokeThickness="3" VerticalAlignment="Top" Width="40"/>
+        </Grid>
+    </Viewbox>
+</UserControl>
