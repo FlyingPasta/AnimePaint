@@ -64,8 +64,8 @@
                     -->
                     <Viewbox>
                         <Grid x:Name="LayoutRoot">
-                            <Rectangle Fill="#FF286FF0" HorizontalAlignment="Left" Height="18" Stroke="#FFF0DC28" VerticalAlignment="Top" Width="18" StrokeThickness="1"/>
-                            <TextBlock HorizontalAlignment="Center" Height="18" TextWrapping="Wrap" Text="Mp" VerticalAlignment="Center" Width="18" FontSize="12" FontFamily="Segoe UI Light" TextAlignment="Center" Foreground="#FFF0DC28"/>
+                            <Rectangle Fill="#FF286FF0" HorizontalAlignment="Left" Height="18" Stroke="#FFF0DC28" VerticalAlignment="Top" Width="18" StrokeThickness="1" StrokeLineJoin="Round" RadiusX="3" RadiusY="3"/>
+                            <TextBlock HorizontalAlignment="Center" Height="18" TextWrapping="Wrap" Text="Ap" VerticalAlignment="Center" Width="18" FontSize="12" FontFamily="Segoe UI Light" TextAlignment="Center" Foreground="#FFF0DC28"/>
                         </Grid>
                     </Viewbox>
                 </metro:CaptionIcon>
@@ -151,6 +151,9 @@
                     </Button.RenderTransform>
                     <AnimePaint:UndoIcon/>
                 </Button>
+                
+                <TextBlock Text="ブラシサイズ:" VerticalAlignment="Center" Margin="5,0,0,0"/>
+                <metro:PromptTextBox Text="{Binding BrushSize}" Prompt="サイズ"/>
 
             </StackPanel>
 
@@ -175,12 +178,8 @@
 				Grid.Row="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
                 <Grid Background="White">
                     <Canvas Height="{Binding Height}" Width="{Binding Width}">
+                        <Thumb Width="30" Height="30" Style="{StaticResource CircleThumbStyleKey}"/>
                     </Canvas>
-                    <InkCanvas Background="{x:Null}" Height="{Binding Height}" Width="{Binding Width}">
-                        <InkCanvas.DefaultDrawingAttributes>
-                            <DrawingAttributes FitToCurve="True" />
-                        </InkCanvas.DefaultDrawingAttributes>
-                    </InkCanvas>
                 </Grid>
             </ScrollViewer>
 

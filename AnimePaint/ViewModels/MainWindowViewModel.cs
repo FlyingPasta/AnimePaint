@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.ComponentModel;
+using System.Windows.Ink;
 
 using Livet;
 using Livet.Commands;
@@ -94,11 +95,29 @@ namespace AnimePaint.ViewModels
         }
         #endregion
 
+        #region BrushSize変更通知プロパティ
+        private int _BrushSize;
+
+        public int BrushSize
+        {
+            get
+            { return _BrushSize; }
+            set
+            { 
+                if (_BrushSize == value)
+                    return;
+                _BrushSize = value;
+                RaisePropertyChanged();
+            }
+        }
+        #endregion
+
 
         public void Initialize()
         {
             Width = 1920;
             Height = 1080;
+            BrushSize = 1;
         }
     }
 }

@@ -14,7 +14,7 @@
                 <ResourceDictionary Source="Styles/StandardButton.xaml"/>
                 <ResourceDictionary Source="Styles/RibbonText.xaml"/>
                 <ResourceDictionary Source="Styles/ButtonLikeRadioButton.xaml"/>
-                <ResourceDictionary Source="Styles/ButtonLikeRadioButton.xaml"/>
+                <ResourceDictionary Source="Styles/CircleThumb.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
