@@ -23,7 +23,16 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TabItem}">
                     <Grid SnapsToDevicePixels="true">
-                        <Border x:Name="Bd2" BorderThickness="0" Background="{DynamicResource AccentHighlightBrushKey}" Padding="{TemplateBinding Padding}" Height="0" Canvas.Top="0" Canvas.Left="0"/>
+                        <Border x:Name="Bd2" BorderThickness="0" Background="{DynamicResource AccentHighlightBrushKey}" Padding="{TemplateBinding Padding}" RenderTransformOrigin="0.5,0.5">
+                            <Border.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="0.0" x:Name="Bd2Scale"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Border.RenderTransform>
+                        </Border>
                         <Border x:Name="Bd" BorderThickness="0" Background="Transparent" Padding="{TemplateBinding Padding}">
                             <ContentPresenter x:Name="Content" ContentSource="Header" HorizontalAlignment="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
                         </Border>
@@ -33,10 +42,14 @@
                                 <VisualState x:Name="MouseOver">
                                     <Storyboard>
                                         <DoubleAnimation
-                                                Storyboard.TargetName="Bd2"
-                                                Storyboard.TargetProperty="Height"
-                                                To="20"
-                                                Duration="0:0:0.3"/>
+                                                Storyboard.TargetName="Bd2Scale"
+                                                Storyboard.TargetProperty="ScaleY"
+                                                To="1.0"
+                                                Duration="0:0:0.2">
+                                            <DoubleAnimation.EasingFunction>
+                                                <CircleEase EasingMode="EaseOut"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
@@ -61,8 +74,8 @@
             </Setter.Value>
         </Setter>
     </Style>
-    
-    
-    
+
+
+
     <!-- リソース ディクショナリのエントリはここで定義します。-->
 </ResourceDictionary>

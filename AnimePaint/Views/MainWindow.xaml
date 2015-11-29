@@ -127,7 +127,7 @@
 
                 <TabItem Header="編集(_E)">
                     <StackPanel Orientation="Horizontal" Margin="3">
-
+                        
                     </StackPanel>
                 </TabItem>
 
@@ -151,7 +151,7 @@
                     </Button.RenderTransform>
                     <AnimePaint:UndoIcon/>
                 </Button>
-                
+
                 <TextBlock Text="ブラシサイズ:" VerticalAlignment="Center" Margin="5,0,0,0"/>
                 <metro:PromptTextBox Text="{Binding BrushSize}" Prompt="サイズ"/>
 
